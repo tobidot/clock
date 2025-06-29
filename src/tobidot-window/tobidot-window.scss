@@ -1,0 +1,103 @@
+@use "sass:math";
+@use "../css/variables.scss" as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: grid;
+  width: auto;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  transform-style: preserve-3d;
+
+  &[data-state="maximized"] {
+    width: 100%;
+    height: 100%;
+    .window {
+      width: 100%;
+      height: 100%;
+      .screen {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &[data-embed-mode="fixed"] {
+    .window {
+      padding: 0;
+      background-color: transparent;
+    }
+    .panel {
+      display: none;
+    }
+    .screen {
+      background-color: transparent;
+    }
+  }
+}
+
+.window {
+  position: relative;
+  display: flex;
+  width: auto;
+  height: auto;
+  padding: $border-size;
+  flex-direction: column;
+  //
+  background-color: $border-color;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.panel {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: 0 $border-size;
+  margin-bottom: $border-size;
+
+  font-weight: bold;
+  color: $text-color;
+  background-color: $ui-color;
+
+  flex-direction: row;
+  white-space: nowrap;
+  flex-wrap: nowrap;
+}
+
+.title {
+  flex: 1;
+  text-align: center;
+  font-size: $font-size;
+  color: $text-color;
+}
+
+.screen {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: #666;
+  overflow: hidden;
+
+  > * > * {
+    width: 100%;
+    height: 100%;
+  }
+
+  #root[data-state="minimized"] & {
+    display: none;
+  }
+}
+
+.action {
+  cursor: pointer;
+}

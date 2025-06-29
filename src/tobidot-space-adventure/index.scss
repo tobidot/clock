@@ -1,0 +1,282 @@
+@use "sass:math";
+@use "css/tablet";
+
+:host(*) {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+
+  cursor: url(/images/cursor/cursor.ico) 2 2, grab;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  cursor: url(/images/cursor/cursor-mark.ico) 4 4, grab;
+}
+
+#root {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  flex-direction: column;
+}
+
+.view {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.scenes {
+  display: none;
+}
+
+audio {
+  width: 100%;
+  height: 1em;
+}
+
+.scene {
+  position: relative;
+  display: flex;
+  width: 400px;
+  height: 300px;
+
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+
+  transform-origin: top left;
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+button {
+  display: block;
+  background: unset;
+  border: unset;
+  background: #00000044;
+  border-radius: 0.125em;
+}
+
+.scene {
+  &-main {
+    &__title {
+      font-size: 2em;
+      padding: 1em;
+    }
+  }
+
+  &-demo {
+    &__title {
+      font-size: 2em;
+      padding: 1em;
+    }
+  }
+
+  &-prolog-movie {
+  }
+}
+
+.list {
+  &__item {
+    font-size: 2em;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+.space-dos-font {
+  position: relative;
+  font-family: "Share Tech Mono", monospace;
+  color: transparent;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 0.2px,
+    #00ff00 0.8px,
+    #00ff00 2px
+  );
+  background-clip: text;
+  background-blend-mode: multiply;
+}
+
+@keyframes crt_flicker {
+  0%,
+  19%,
+  21%,
+  100% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.8;
+  }
+}
+
+.space-dos-font {
+  animation: crt_flicker 0.15s infinite;
+}
+
+// .scanlines {
+//   position: relative;
+//   overflow: hidden;
+// }
+
+// .scanlines::before {
+//   content: "";
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: repeating-linear-gradient(
+//     to bottom,
+//     rgba(0, 0, 0, 0) 0px,
+//     rgba(0, 0, 0, 0) 1px,
+//     rgba(0, 0, 0, 0.1) 2px
+//   );
+//   pointer-events: none;
+// }
+
+.messages {
+  display: none;
+}
+
+.frames {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  .frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    background-color: black;
+    opacity: 0;
+    transition: opacity 1s;
+
+    &__background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+
+    &.show {
+      opacity: 1;
+    }
+  }
+}
+
+.effect {
+  &__red-alert {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #88000088;
+    animation: blend alternate-reverse 0.5s infinite;
+  }
+  &__narrator {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    display: inline-block;
+    width: 100%;
+    max-width: 80%;
+    height: auto;
+    transform: translate(-50%, -50%);
+
+    font-family: "Share Tech Mono", monospace;
+    font-size: 1.5em;
+    color: transparent;
+    text-shadow: 1px 2px 2px #00000088;
+    white-space: normal;
+    text-align: center;
+    letter-spacing: 0.1em;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 0.2px,
+      #00ff00 0.8px,
+      #00ff00 2px
+    );
+    background-clip: text;
+    background-blend-mode: multiply;
+  }
+}
+
+.clickbox {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  &__path {
+    fill: #00000001;
+    // stroke: red;
+    pointer-events: fill;
+
+    cursor: url(/images/cursor/cursor-mark.ico) 4 4, grab;
+  }
+}
+
+.textbox {
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+  width: 100%;
+  height: auto;
+
+  pointer-events: none;
+  background-color: #00000088;
+
+  box-sizing: border-box;
+
+  > .text {
+    display: inline;
+    font-size: 24px;
+  }
+
+  &:not(:empty) {
+    padding: 0.125em 0.5em;
+  }
+}
+
+@keyframes blend {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,319 @@
+<div class="view"></div>
+<div class="tablet" data-state="closed">
+  <div class="tablet__background">
+    <div class="tablet__screen"></div>
+    <div class="tablet__controls">
+      <button class="tablet__home" name="tablet|home"></button>
+      <button class="tablet__close" name="tablet|close"></button>
+    </div>
+    <div class="tablet__messages">
+      <h2 class="tablet__messages-title">Messages</h2>
+      <div class="tablet__messages-list"></div>
+    </div>
+  </div>
+</div>
+<!-- <div class="inventory" data-state="closed">
+  <div class="inventory__items"></div>
+</div>
+<button name="inventory"></button> -->
+<audio
+  class="music"
+  src="/music/a-journey-through-space.opus"
+  autoplay
+  loop
+  controls
+></audio>
+<div class="scenes">
+  <div class="scene scene-main" data-name="main">
+    <img
+      class="scene__background"
+      src="/images/space-adventure/scenes/main/background.png"
+      alt="Main Screen, Lone man looking out of the window"
+    />
+    <div class="scanlines">
+      <h3 class="scene-main__title space-dos-font">Space Adventure</h3>
+    </div>
+    <div class="scene-main__list list">
+      <button class="list__item" name="start">
+        <span class="space-dos-font">Start Game</span>
+      </button>
+    </div>
+  </div>
+  <div class="scene scene-demo" data-name="demo">
+    <img
+      class="scene__background"
+      src="/images/space-adventure/scenes/demo/background.png"
+      alt="Demo End Screen"
+    />
+    <div class="scanlines">
+      <h3 class="scene-demo__title space-dos-font">This Demo ends here.</h3>
+      <p class="space-dos-font">
+        The full version will be released early in the coming year 1996.
+      </p>
+    </div>
+    <div class="scene-demo__list list">
+      <button class="list__item" name="back-to-main">
+        <span class="space-dos-font">Back to Main</span>
+      </button>
+    </div>
+  </div>
+  <div class="scene scene-prolog-movie" data-name="prolog-movie">
+    <div class="frames" data-name="prolog">
+      <div class="frame" data-delay="10">
+        <img
+          class="frame__background"
+          src="/images/space-adventure/scenes/prolog/spacestation-outside-2.png"
+          alt="S.S. Spindlefork in space"
+        />
+        <div class="effect__narrator">
+          2091: The S.S. Spindlefork is operating normally in some distant spot
+          of the Galaxy
+        </div>
+        <audio src="/sfx/spacestation-hum.mp3" loop></audio>
+      </div>
+      <div class="frame" data-delay="2">
+        <img
+          class="frame__background"
+          src="/images/space-adventure/scenes/prolog/spacestation-outside-2.png"
+          alt="S.S. Spindlefork in space"
+        />
+        <div class="effect__narrator">Until ...</div>
+        <audio src="/sfx/spacestation-hum.mp3" loop></audio>
+      </div>
+      <div class="frame" data-delay="3">
+        <img
+          class="frame__background"
+          src="/images/space-adventure/scenes/prolog/monitor-green.png"
+          alt="Status Monitor"
+        />
+        <audio src="/sfx/monitor-working.mp3"></audio>
+        <audio src="/sfx/spacestation-hum.mp3" loop></audio>
+      </div>
+      <div class="frame" data-delay="3">
+        <img
+          class="frame__background"
+          src="/images/space-adventure/scenes/prolog/monitor-red.png"
+          alt="Status Monitor"
+        />
+        <div class="effect__red-alert"></div>
+        <audio src="/sfx/spacestation-alarm.mp3" loop></audio>
+      </div>
+      <div class="frame" data-delay="1">
+        <img
+          class="frame__background"
+          src="/images/space-adventure/scenes/prolog/spacestation-outside-2.png"
+          alt="S.S. Spindlefork in space"
+        />
+        <div class="effect__red-alert"></div>
+        <audio src="/sfx/spacestation-alarm.mp3" loop></audio>
+      </div>
+      <div class="frame" data-delay="3">
+        <img
+          class="frame__background"
+          src="/images/space-adventure/scenes/prolog/spacestation-outside-escape-pods.png"
+          alt="S.S. Spindlefork in space, escape pods"
+        />
+        <div class="effect__red-alert"></div>
+        <audio src="/sfx/escape-pods-ejecting.mp3"></audio>
+      </div>
+      <div class="frame" data-delay="7">
+        <img
+          class="frame__background"
+          src="/images/space-adventure/scenes/prolog/spacestation-outside-2.png"
+          alt="S.S. Spindlefork in space"
+        />
+        <div class="effect__narrator">
+          The whole crew fled according to protocol
+        </div>
+        <audio src="/sfx/spacestation-hum.mp3" loop></audio>
+      </div>
+      <div class="frame" data-delay="3">
+        <img
+          class="frame__background"
+          src="/images/space-adventure/scenes/prolog/spacestation-outside-2.png"
+          alt="S.S. Spindlefork in space"
+        />
+        <div class="effect__narrator">Except ...</div>
+        <audio src="/sfx/spacestation-hum.mp3" loop></audio>
+      </div>
+      <div class="frame" data-delay="1">
+        <img
+          class="frame__background"
+          src="/images/space-adventure/scenes/cabin/cabin.png"
+          alt="Your private cabine"
+        />
+        <div class="effect__narrator">You</div>
+        <audio src="/sfx/spacestation-hum.mp3" loop></audio>
+      </div>
+    </div>
+  </div>
+  <div class="scene scene-cabine" data-name="cabin">
+    <img
+      class="scene__background"
+      src="/images/space-adventure/scenes/cabin/cabin.png"
+      alt="Your private cabin"
+    />
+    <svg
+      class="clickbox"
+      data-name="cabin|terminal"
+      viewBox="0 0 400 300"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        class="clickbox__path"
+        d="M 10,110 L 105,120 L 105,160 L 10,165 z"
+      ></path>
+    </svg>
+    <svg
+      class="clickbox"
+      data-name="cabin|door"
+      viewBox="0 0 400 300"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        class="clickbox__path"
+        d="M 260,80 L 335,80 L 335,190 L 260,190 z"
+      ></path>
+    </svg>
+    <svg
+      class="clickbox"
+      data-name="cabin|bed"
+      viewBox="0 0 400 300"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        class="clickbox__path"
+        d="M 240,180 L 265,185 L 335,185 L 390,160 L 400, 165 L 400,225 L 200,225 L 200,175 L 210,170  z"
+      ></path>
+    </svg>
+    <svg
+      class="clickbox"
+      data-name="cabin|bottle-1"
+      viewBox="0 0 400 300"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        class="clickbox__path"
+        d="M 155,240 L 170,240 L 170,285 L 155,285 z"
+      ></path>
+    </svg>
+    <svg
+      class="clickbox"
+      data-name="cabin|bottle-2"
+      viewBox="0 0 400 300"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        class="clickbox__path"
+        d="M 345,210 L 353,210 L 358,255 L 340,255 z"
+      ></path>
+    </svg>
+    <svg
+      class="clickbox"
+      data-name="cabin|bottle-group"
+      viewBox="0 0 400 300"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        class="clickbox__path"
+        d="M 30,200 L 85,220 L 90,270 L 75,270 L 25,250 z"
+      ></path>
+    </svg>
+    <svg
+      class="clickbox"
+      data-name="cabin|jacket"
+      viewBox="0 0 400 300"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        class="clickbox__path"
+        d="M 175,110 L 190,105 L 195,170 L 180,170 L 170,150 z"
+      ></path>
+    </svg>
+    <svg
+      class="clickbox"
+      data-name="cabin|air-conditioning"
+      viewBox="0 0 400 300"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        class="clickbox__path"
+        d="M 160,25 L 340,20 L 335,45 L 190,50 z"
+      ></path>
+    </svg>
+    <audio src="/sfx/spacestation-hum.mp3" loop></audio>
+  </div>
+  <div class="scene scene-cabine--terminal" data-name="cabin|terminal">
+    <img
+      class="scene__background"
+      src="/images/space-adventure/scenes/cabin/terminal.png"
+      alt="Your private terminal"
+    />
+    <svg
+      class="clickbox"
+      data-name="terminal"
+      viewBox="0 0 400 300"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        class="clickbox__path"
+        d="M 110,110 L 155,114 L 155,150 L 110,150 z"
+      ></path>
+    </svg>
+    <audio src="/sfx/spacestation-hum.mp3" loop></audio>
+  </div>
+</div>
+<!-- The different screens shown in the tablet are stored here -->
+<div class="messages">
+  <div class="tablet__message" data-name="mail-vivian-breakup">
+    <h3>MAIL: Yesterday 12:34 | Vivian</h3>
+    <p>
+      I know this will be hard for you, but I have a life here too, you know.
+      And with you working on the S.S. Spindlefork you are so far away, we
+      barely have anything in common anymore.
+    </p>
+    <p>
+      I just hope you are taking this well and do not fall back into your
+      drinking habbits! But i cannot continue like this: I am breaking up with
+      you!
+      <br />
+      <br />
+      Vivian
+    </p>
+  </div>
+  <div class="tablet__message" data-name="mail-system-emergency">
+    <h3>MAIL: Today 08:41 | SYSTEM</h3>
+    <h4>Alert!</h4>
+    <p>The reactor core is critical. All crew is to evacuate immediately.</p>
+  </div>
+  <div class="tablet__message" data-name="user-manual">
+    <h3>User Manual</h3>
+    <h4>uPad™ Mk IV</h4>
+    <p>
+      Congratulations on owning the finest in personal data retrieval and
+      message storage technology. With the uPad™ it does not matter, if you
+      wrote a note by hand or have a message saved on your terminal. It will
+      store them for you and allows you to access them from the 🏠 screen at any
+      time.
+    </p>
+    <h4>How do i open the uPad™</h4>
+    <p>
+      📍 You'll find the uPad™ icon permanently affixed to the top-left corner
+      of your brain interface — because we couldn't afford the suction cups for
+      anything fancier. 🖱️ Click it to open the uPad and bask in the glow of
+      stored knowledge (and questionable handwriting).
+    </p>
+    <h4>🏠 Home Screen</h4>
+    <p>
+      Once opened, you'll land on the Home Screen, which displays all the logs,
+      notes, and messages you've uncovered so far, alphabetized by something
+      that might resemble logic. Click any entry to read it. Click the ❌ in the
+      top-right corner of the pad to close the uPad like the digital adult you
+      are.
+    </p>
+  </div>
+</div>
+<!-- <div class="items">
+  <div class="item item-screwdriver"></div>
+</div> -->
+<div class="textbox"><div class="text space-dos-font"></div></div>

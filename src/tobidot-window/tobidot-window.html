@@ -1,0 +1,17 @@
+<div class="window">
+  <div class="panel">
+    <slot name="panel">
+      <div class="action">
+        <slot name="actions">
+          <button class="action action-close" name="close">X</button>
+          <button class="action action-maximize" name="maximize">[]</button>
+          <button class="action action-minimize" name="minimize">_</button>
+        </slot>
+      </div>
+      <div class="title"><slot name="title"> Window </slot></div>
+    </slot>
+  </div>
+  <div class="screen">
+    <slot name="screen"> Hello, World! </slot>
+  </div>
+</div>

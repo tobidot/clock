@@ -1,19 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>clock</title>
-    <link rel="stylesheet" href="/src/style.scss">
     <script async src="/src/index.ts" type="module"></script>
-</head>
+    <script async src="/src/index.scss" type="module"></script>
+    <script async src="/src/tobidot-space-adventure/index.ts" type="module"></script>
+    <script async src="/src/tobidot-icon/index.ts" type="module"></script>
+    <script async src="/src/tobidot-clock/index.ts" type="module"></script>
+    <script async src="/src/tobidot-window/index.ts" type="module"></script>
+    <script async src="/src/tobidot-desktop/index.ts" type="module"></script>
+  </head>
 
-<body>
+  <body>
     <div id="app">
-        <h1>clock</h1>        
-    </div>
-</body>
+      <tobidot-desktop>
+       <tobidot-icon>
+          <span slot="title">Clock Smooth</span>
+          <img slot="image" src="/images/icons/clock.png" alt="Clock Smooth">
+            
+          </img>
+          <template slot="template">
+            <tobidot-window
+              data-embed-mode="window"
+              data-width="200"
+              data-height="200"
+            >
+              <div slot="title">Clock Smooth 2</div>
+              <tobidot-clock data-mode="smooth" slot="screen">
+                <span>XII</span>
+                <span slot="2">I</span>
+                <span>II</span>
+                <span>III</span>
+                <span>VI</span>
+                <span>V</span>
+                <span>VI</span>
+                <span>VII</span>
+                <span>VIII</span>
+                <span>IX</span>
+                <span>X</span>
+                <span>XI</span>
+              </tobidot-clock>
+            </tobidot-window>
+          </template>
+        </tobidot-icon>        
+        <tobidot-icon>
+          <span slot="title">A space journey</span>
+          <img slot="image" src="/images/icons/point-and-click.png" alt="A space journey">
+            
+          </img>
+          <template slot="template">
+            <tobidot-window
+              data-embed-mode="window"
+              data-width="800"
+              data-height="600"
+            >
+              <div slot="title">Space Adventure</div>
+              <tobidot-space-adventure slot="screen"></tobidot-space-adventure>
+            </tobidot-window>
+          </template>
+        </tobidot-icon>
+        <tobidot-window
+          style="right: 10px; bottom: 10px"
+          data-embed-mode="fixed"
+          data-width="100"
+          data-height="100"
+        >
+          <div slot="title">Clock Smooth</div>
+          <tobidot-clock data-mode="smooth" slot="screen"></tobidot-clock>
+        </tobidot-window>
+    
+      <!-- <tobidot-window data-mode="window">
+        <div slot="panel">Clock Smooth</div>
+        <div slot="screen">
+          <tobidot-clock data-mode="smooth"></tobidot-clock>
+        </div>
+      </tobidot-window>
+      <tobidot-window data-mode="window">
+        <div slot="panel">Clock Snap</div>
+        <div slot="screen">
+          <tobidot-clock data-mode="snap"></tobidot-clock>
+        </div>
+      </tobidot-window> -->
 
+      </tobidot-desktop>
+    </div>
+  </body>
 </html>
